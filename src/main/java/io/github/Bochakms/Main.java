@@ -4,6 +4,7 @@ import io.github.Bochakms.dao.UserDao;
 import io.github.Bochakms.dao.UserDaoImpl;
 import io.github.Bochakms.entity.User;
 import io.github.Bochakms.util.HibernateUtil;
+
 import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
@@ -13,7 +14,9 @@ public class Main {
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        try {
+        
+   	
+    	try {
             boolean running = true;
             while (running) {
                 printMenu();
