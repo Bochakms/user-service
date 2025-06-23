@@ -6,9 +6,9 @@ import java.util.List;
 import java.util.Optional;
 
 public interface UserDao {
-    Long create(User user);
-    Optional<User> getById(Long id);
-    List<User> getAll();
-    void update(User user);
-    void delete(Long id);
+    void createUser(User user);
+    Optional<User> getUserById(Long id);
+    List<User> getAllUsers();
+    void updateUser(User user);
+    void deleteUser(Long id);
 }

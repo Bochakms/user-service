@@ -10,6 +10,11 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "users")
 public class User {
+    @Override
+    public String toString() {
+        return "User{id=" + id + ", name='" + name + "', email='" + email + "', age=" + age + "}";
+    }
+	
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -37,5 +42,6 @@ public class User {
     public Integer getAge() { return age; }
     public void setAge(Integer age) { this.age = age; }
     public LocalDateTime getCreatedAt() { return createdAt; }
-    public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
+    public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }   
+
 }
