@@ -5,6 +5,7 @@ import io.github.Bochakms.dao.UserDaoImpl;
 import io.github.Bochakms.entity.User;
 import io.github.Bochakms.util.HibernateUtil;
 
+import java.sql.DriverManager;
 import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
@@ -15,7 +16,7 @@ public class Main {
 
     public static void main(String[] args) {
         
-   	
+    	
     	try {
             boolean running = true;
             while (running) {

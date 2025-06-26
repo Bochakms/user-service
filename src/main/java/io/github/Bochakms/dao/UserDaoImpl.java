@@ -2,9 +2,12 @@ package io.github.Bochakms.dao;
 
 import io.github.Bochakms.entity.User;
 import io.github.Bochakms.util.HibernateUtil;
+import io.github.Bochakms.exceptions.UserServiceException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
+
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -35,12 +38,13 @@ public class UserDaoImpl implements UserDao {
         }
     }
 
-    @Override
+    @Override  
     public List<User> getAllUsers() {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            return session.createQuery("FROM User", User.class).getResultList();
+            List<User> users = session.createQuery("from User", User.class).list();
+            return users != null ? users : Collections.emptyList();
         } catch (Exception e) {
-            throw new RuntimeException("Failed to get all users", e);
+            throw new UserServiceException("Failed to get all users", e);
         }
     }
 
